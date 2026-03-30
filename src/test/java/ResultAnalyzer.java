@@ -24,7 +24,6 @@ public class ResultAnalyzer implements TestWatcher, AfterAllCallback {
     private enum TestResultStatus {
         SUCCESSFUL, ABORTED, FAILED, DISABLED;
     }
-
     @Override
     public void testDisabled(ExtensionContext context, Optional<String> reason) {
         testResultsStatus.add(TestResultStatus.DISABLED);
@@ -55,7 +54,7 @@ public class ResultAnalyzer implements TestWatcher, AfterAllCallback {
         long failure = summary.get(TestResultStatus.FAILED) != null ? summary.get(TestResultStatus.FAILED) : 0;
 
         double score = (double) success / (success + failure);
-        String userId = "999999";
+        String userId = "308324";
 
         JSONObject json = new JSONObject();
         json.put("score", score);
